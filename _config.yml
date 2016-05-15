@@ -1,0 +1,14 @@
+
+# Site settings
+title: Paper Sweetly
+email: hey@papersweetly.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: papersweetly
+instagram_username:  papersweetly
+facebook_username: papersweetly
+
+# Build settings
+markdown: kramdown

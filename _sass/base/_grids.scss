@@ -1,0 +1,14 @@
+
+$tablet: 750px;
+$pc: 1000px;
+
+
+.container {
+  max-width: 1000px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+body {
+  font-size: em(16);
+}

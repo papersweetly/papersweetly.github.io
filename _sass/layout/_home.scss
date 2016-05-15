@@ -1,0 +1,82 @@
+.ps__posts {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  &__item {
+    width: calc(50% - 20px);
+    float: left;
+    margin: 10px;
+    height: em(150);
+
+    @include breakpoint($tablet) {
+      height: em(400);
+    }
+
+    figure {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      height: 100%;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba($black, 0.6);
+        z-index: -1;
+        opacity: 0;
+      }
+
+      &:hover {
+        &:after {
+          z-index: $zIndex-1;
+          opacity: 1;
+        }
+        figcaption {
+          z-index: $zIndex-2 ;
+          opacity: 1;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    figcaption {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      padding: 0 em(5);
+      left: 50%;
+      transform: translateX(-50%);
+
+      font-family: $primary-typeface;
+      font-size: em(14);
+      font-weight: 400;
+      color: $white;
+      letter-spacing: 1px;
+      opacity: 0;
+      z-index: -1;
+    }
+
+  }
+}
+
+.ps__home__heading {
+  font-size: em(18);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  text-align: center;
+  padding: 10px 0;
+}
+.double__border {
+  border-top: 1px solid $gray;
+  margin-top: em(3);
+}

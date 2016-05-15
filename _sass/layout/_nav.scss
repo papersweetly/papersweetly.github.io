@@ -1,0 +1,92 @@
+.ps__nav {
+  position: relative;
+
+  &__container {
+    padding: 0;
+    margin: 0;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    @include transition(all 0.6s);
+
+    @include breakpoint($tablet) {
+      opacity: 1;
+      height: auto;
+      visibility: visible;
+    }
+  }
+  &__link {
+    font-size: em(18);
+    line-height: em(32, 18);
+    font-family: $primary-typeface;
+    text-align: center;
+    color: $gray;
+    border-bottom: 1px solid $gray;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+      background-color: $gray;
+    }
+
+    @include breakpoint($tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.ps__nav__menu {
+  display: block;
+  width: 28px;
+  height: 30px;
+  margin: 30px auto 10px;
+
+  @include breakpoint($tablet) {
+    display: none;
+  }
+}
+
+.ps__nav__menu span:after,
+.ps__nav__menu span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+.ps__nav__menu span:after{
+  top: 9px;
+}
+.ps__nav__menu span {
+  position: relative;
+  display: block;
+}
+
+.ps__nav__menu span,
+.ps__nav__menu span:after,
+.ps__nav__menu span:before {
+  width: 100%;
+  height: 5px;
+  background-color: $gray;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+.ps__nav__menu.is__active span {
+  background-color: transparent;
+}
+.ps__nav__menu.is__active span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.ps__nav__menu.is__active span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+.ps__nav__menu.is__active + .ps__nav__container {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}

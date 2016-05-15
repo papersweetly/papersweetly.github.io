@@ -1,0 +1,18 @@
+h1.logo {
+  width: 100%;
+  height: em(50);
+  background: url($logo) no-repeat center center;
+  background-size: contain;
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-indent: -9999em;
+  }
+}
+
+@import "layout/nav";
